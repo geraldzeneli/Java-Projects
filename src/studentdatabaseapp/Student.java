@@ -41,7 +41,7 @@ public class Student {
 			System.out.print("Enter course to enroll (Q to quit): ");
 			Scanner in = new Scanner(System.in);
 			String course = in.nextLine();
-			if(!course.equals("Q")) {
+			if(!"Q".equals(course)) {
 				courses += "\n  " + course;
 				tuitionBalance += costOfCourse;
 			}
