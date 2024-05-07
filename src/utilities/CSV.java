@@ -1,5 +1,6 @@
 package utilities;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -17,7 +18,7 @@ public class CSV {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			
-			while( (dataRow = br.readLine()) != null) {
+			while( (dataRow = BoundedLineReader.readLine(br, 5_000_000)) != null) {
 				String[] dataRecords = dataRow.split(",");
 				data.add(dataRecords);
 			}
