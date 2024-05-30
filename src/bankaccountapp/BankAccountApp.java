@@ -21,10 +21,10 @@ public class BankAccountApp {
 			String accountType = accountHolder[2];
 			double initialDeposit = Double.parseDouble(accountHolder[3]);
 			
-			if(accountType.equals("Savings")) {
+			if("Savings".equals(accountType)) {
 				accounts.add(new Savings(name, ssn, initialDeposit));
 			}
-			else if(accountType.equals("Checking")) {
+			else if("Checking".equals(accountType)) {
 				accounts.add(new Checking(name, ssn, initialDeposit));
 			}
 			else {
